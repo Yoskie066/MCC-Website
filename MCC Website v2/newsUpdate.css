@@ -1,0 +1,559 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+  }
+  .container{
+    width: min(100% - 0rem, 100em);
+    margin-inline: auto;
+  }
+
+:root {
+  --heading-color: #f0bf1a;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e1e3e3;
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(6, 84, 143);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--heading-color);
+}
+
+/*---------------HEADER---------------*/
+.mcc-logo{
+    padding-right: 20px;
+    position: absolute;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 1.5rem;
+  }
+  
+  .hamburger {
+    display: none;
+  }
+  
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+  }
+  
+  .nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-item {
+    margin-left: 1rem;
+  }
+  
+  .nav-link{
+    font-size: 1rem;
+    font-weight: 500;
+    color: black;
+  }
+  
+  .navbar a.active {
+    color: #0c0e8a;
+  }
+  
+  .nav-link:hover{
+    color: #0c0e8a;
+  }
+  
+  .nav-menu a {
+    position: relative;
+    color: black;
+    text-decoration: none;
+  }
+  
+  a.nav-link{
+    margin-left: 0px;
+  }
+  
+  .nav-menu  a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    top: 0;
+    left: 0;
+    background-color:#0c0e8a;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-menu a:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .nav-logo {
+    font-size: 2rem;
+    font-weight: 1000;
+    color: black;
+    padding-left: 60px;
+  }
+  
+  @media screen and (max-width: 1400px) {
+    .nav-logo{
+      font-size: 1.5rem;
+    }
+    .nav-link{
+      font-size: .95rem;
+    }
+  }
+  
+  @media screen and (max-width: 1250px) {
+    .nav-menu {
+      position: absolute;
+      left: -100%;
+      top: 8rem;
+      flex-direction: column;
+      background-color: #eeeeee;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+      z-index: 9999;
+    }
+    .nav-menu.active {
+      left: 0;
+      color: #0c0e8a;
+    }
+    .nav-item {
+      margin: 2.5rem;
+    }
+    .hamburger {
+      display: block;
+      cursor: pointer;
+    }
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+  
+  @media screen and (max-width: 525px) {
+    .bar{
+      width: 20px;
+    }
+    .nav-menu{
+      top: 10rem;
+    }
+  }
+  
+  @media screen and (max-width: 380px) {
+    .nav-menu{
+      top: 12rem;
+    }
+  }
+  
+  @media screen and (max-width:320px) {
+    .mcc-logo{
+      display: none;
+    }
+    .nav-logo{
+      padding-left: 0px;
+    }
+  }
+  
+/* FOOTER CATCHPHRASE */
+.hr-catchphrase{
+    max-width: 40px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #005b96;
+    border: 4px solid #005b96;
+    margin: 5em auto 0 auto;
+    }
+    .catchphrase{
+    font-size: 1.2rem;
+    padding: 50px;
+    padding-top: 20px;
+    text-align: center;
+    }
+    
+    /* FOOTER CONTACT US */
+    .contact-us-container{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    justify-content: center;
+    }
+    
+    .footer-contact-us{
+    text-align: center;
+    padding: 10px 0px;
+    margin: -20px;
+    }
+    
+    .footer-contact-us > a{
+      color: #f3f5f5;
+      background-color: #1872ff;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-family: "Poppins";
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      padding: 15px 35px;
+      transition: 0.3s;
+      text-align: center;
+    }
+    
+    .footer-contact-us > a:hover{
+    color: #1872ff;
+    background-color: white;
+    transition: ease-in-out .3s;
+    }
+    
+    
+    /* FOOTER */
+    .footer-container{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    background-color: #040520;
+    justify-content: center;
+    }
+    
+    .footer-container-child{
+    color: black;
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    padding-bottom: 20px;
+    width: 300px;
+    }
+    
+    .footer-title{
+    font-size: 1.2rem;
+    font-weight: 1000;
+    margin-left: 40px;
+    padding: 20px 0px;
+    }
+    
+    .footer-link{
+    font-size: 1rem;
+    color: white;
+    }
+    
+    .footer-nav-link{
+    font-size: 1rem;
+    margin-bottom: 8px;
+    margin-left: 40px;
+    color: white;
+    }
+    .footer-address{
+    font-size: 1rem;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    }
+    
+    .mcc-footer-logo{
+    max-width: 250px;
+    height: 250px;
+    align-items: center;
+    }
+    
+    .app-store-footer{
+      max-width: 150px;
+      margin-bottom: 5px;
+      padding-left: 12%;
+      }
+    
+    
+    #fb-logo, #linked-in-logo{
+    max-width: 30px;
+    }
+    
+    .socmed-img{
+    padding-left: 14%;
+    display: flex;
+    }
+  
+  .copyright-footer {
+    font-size: .6rem;
+    color: gray;
+    font-weight: bolder;
+    background-color:#05142b;
+    max-width: 100%;
+    padding: 20px;
+  }
+   /* Background image */
+   .hero {
+    background-image: url(/new-updates-images/newspaper.jpg);
+    width: 100%;
+    min-height: 50vh;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+  } 
+  .news-title h1 {
+    color: white;
+    font-size: 3em;
+    padding: 1.7em 0 0 1em;
+    font-family: 'Poppins';
+    font-weight: bold;
+  } 
+
+
+  
+  /* Events Calendar */
+  
+  .events-calendar{
+    background-color: #005b96;
+    padding: 3em 0;
+  }
+  .events-calendar h1{
+    color: white;
+    font-size: 2em;
+    margin-bottom: 1em;
+    font-family: 'Poppins';
+    text-align: center;
+  }
+
+#calendar{
+    max-width: 90vw;
+}
+
+/* Company Updates */
+.updates h1{
+  padding: 1em 0 0 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Poppins';
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+.updates img{
+  width: 20em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em
+  
+}
+.updates iframe{
+  display: block;
+  width: 85%;
+  height: 20em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
+}
+
+/* News */
+.news-updates{
+  background-color: #005b96;
+  padding-top: 2em;
+}
+.news-updates img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 2em;
+  width: 85%;
+}
+.news1,.news2,.news3{
+  padding-bottom: 5em;
+  
+}
+.news1 h1,.news2 h1,.news3 h1{
+  color: white;
+  font-size: 2em;
+  margin: 0 1em;
+  text-align: left;
+  padding-bottom: 1em;
+}
+.news1 p,.news2 p,.news3 p{
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  margin-right: auto;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-bottom: 1em;
+  text-align: justify;
+}
+.news1 a,.news2 a,.news3 a{
+  color: #fff700;
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 5em;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 800;
+  transition: 0.3s;
+}
+.news-updates a:hover{
+  color: #ff7f00;
+  transition: ease-in-out .3s;
+}
+
+@media only screen and (min-width: 768px) { /* IPad */
+.news-title h1{
+  font-size: 4em;
+  padding-top: 3em;
+}
+#calendar{
+  width: 45em;
+}
+}
+@media only screen and (min-width: 1300px) { /* Desktop View */
+  .news-title h1{
+    font-size: 4.5em;
+    padding-top: 2em;
+    padding-left: 3em;
+  }
+  #calendar{
+    width: 90em;
+  }
+  .events-calendar{
+    padding-bottom: 5em;
+  }
+  .updates h1{
+    font-size: 4em;
+  }
+  .updates img{
+    display: inline-block;
+    margin: 1em;
+    margin-bottom: 5em;
+    height: 30em;
+    transform: translateX(75%);
+  }
+  .updates iframe{
+    height: 50em;
+    padding-bottom: 5em;
+  }
+  .news1 h1{
+    font-size: 48px;
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-right: 16em;
+  }
+  .news1 img,.news2 img,.news3 img{
+    width: 40em;
+    margin-left: 9em;
+  }
+  .news1 span,.news2 span,.news3 span{
+    display: flex;
+  }
+  .news2 h1{
+    font-size: 48px;
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-right: 16em;
+  }
+  .news3 h1{
+    font-size: 48px;
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-right: 16em;
+  }
+  .news-updates p{
+    font-family: 'Arial';
+    font-size: 17px;
+    margin-right: 8em;
+    line-height: 35px;
+  }
+  .news-updates a{
+    font-size: 15px;
+    margin-left: 2em;  
+  }
+  .news-updates{
+    padding-left: 5em;
+  }
+  }
+
+  @media screen and (max-width: 1200px) {
+    #footer-mcc-logo{
+      width: 100%;
+    }
+    .footer-title{
+      margin-right: 2em;
+    }
+    .footer-container-child{
+      justify-content: center;
+      display: block;
+      width: 33.33%;
+      text-align: center;
+      padding: 0px;
+    }
+    .mcc-footer-logo{
+      margin: 0 auto;
+    }
+    .footer-nav-link, .footer-address{
+      margin-left: 0px;
+    }
+    .app-store-footer{
+      max-width: 100px;
+      padding: 0px;
+      margin: 0 auto;
+    }
+    .socmed-img{
+      display: flex;
+      padding: 0;
+      padding-bottom: 2px;
+      justify-content: center;
+    }
+  
+  }
+  
+  @media screen and (max-width: 870px) {
+    .footer-container-child{
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .footer-nav-link, .footer-address{
+      margin-left: 0px;
+    }
+  
+    .socmed-img{
+      display: flex;
+      padding-bottom: 5px;
+      justify-content: center;
+    }
+    
+  }
+  
